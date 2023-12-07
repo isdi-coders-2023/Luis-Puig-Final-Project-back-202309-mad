@@ -69,7 +69,7 @@ describe('Given UsersController class', () => {
         email: 'test@example.com',
         passwd: 'test',
       });
-      expect(mockResponse.status).toHaveBeenCalledWith(202);
+      expect(mockResponse.status).toHaveBeenCalledWith(201);
     });
   });
 
