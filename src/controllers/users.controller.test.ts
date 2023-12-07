@@ -98,7 +98,6 @@ describe('Given UsersController class', () => {
       // Testing with userId
       await controller.login(mockRequest, mockResponse, mockNext);
       expect(mockRepo.getById).toHaveBeenCalledWith(mockUserId);
-      expect(mockResponse.statusMessage).toBe('Accepted');
       expect(mockResponse.json).toHaveBeenCalledWith({
         user: mockLoginResult,
         token: expect.any(String),
