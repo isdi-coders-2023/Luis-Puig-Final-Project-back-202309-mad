@@ -1,19 +1,19 @@
 {
-  "name": "Final Project",
+  "name": "final-project-luis-puig-back",
   "version": "1.0.0",
   "description": "Final project",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "start:dev": "cross-env DEBUG=SKINS* nodemon dist/index.js",
+    "start:dev": "cross-env PORT=3030 DEBUG=W8E* nodemon dist/index.js",
     "build": "tsc -w",
     "build:render": "tsc",
     "test": "jest --watchAll --coverage",
     "test:prod": "jest --watchAll --watchAll=false --coverage --passWithNoTests"
   },
   "keywords": [],
-  "author": "Luis Puig",
+  "author": "luispuig89",
   "license": "ISC",
   "prettier": {
     "singleQuote": true
