@@ -58,9 +58,7 @@ describe('GivenUsersMongoRepo', () => {
     const exec = jest.fn().mockResolvedValue(null);
     beforeEach(() => {
       UserModel.findById = jest.fn().mockReturnValue({
-        populate: jest.fn().mockReturnValue({
-          exec,
-        }),
+        exec,
       });
       UserModel.findOne = jest.fn().mockReturnValue({
         exec,
@@ -68,8 +66,7 @@ describe('GivenUsersMongoRepo', () => {
       repo = new UsersMongoRepo();
     });
     test('Then getById should throw an error', async () => {
-      // Cómo testear un error asíncrono
-      expect(repo.getById('')).rejects.toThrow();
+      expect(repo.getById('' as string)).rejects.toThrow();
     });
     test('Then login should throw an error', async () => {
       expect(repo.login({} as User)).rejects.toThrow();

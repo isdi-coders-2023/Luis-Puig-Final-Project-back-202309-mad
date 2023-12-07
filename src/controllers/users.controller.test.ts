@@ -48,7 +48,23 @@ describe('Given UsersController class', () => {
       await controller.create(mockRequest, mockResponse, mockNext);
       expect(mockResponse.json).toHaveBeenCalledWith({});
     });
-
+    test('Then login should return user data and token for a valid user', async () => {
+      const mockRequestWithUserId = {
+        body: { userId: 'someUserId' },
+        params: {},
+        query: { key: 'value' },
+      } as unknown as Request;
+      const mockResponseWithUserId = {
+        json: jest.fn(),
+        status: jest.fn(),
+      } as unknown as Response;
+      await controller.login(
+        mockRequestWithUserId,
+        mockResponseWithUserId,
+        mockNext
+      );
+      expect(mockResponseWithUserId.json).toHaveBeenCalled();
+    });
     test('Then login should successfully authenticate with valid credentials and return user data and token', async () => {
       const mockRequest = {
         body: {
